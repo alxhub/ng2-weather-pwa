@@ -1,0 +1,25 @@
+{
+  "angularCompilerOptions": {
+    "genDir": "ngfactory",
+    "skipMetadataEmit": true
+  },
+  "compilerOptions": {
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "lib": [
+      "dom",
+      "es2015"
+    ],
+    "module": "es2015",
+    "moduleResolution": "node",
+    "outDir": "tmp/ngc",
+    "target": "es5",
+    "types": [
+      "node"
+    ]
+  },
+  "files": [
+    "main.ts",
+    "main-static.ts"
+  ]
+}
