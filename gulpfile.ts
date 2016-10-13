@@ -8,6 +8,7 @@ const runSequence = require('run-sequence');
 gulp.task('build', done => runSequence(
   'task:ngc',
   'task:rollup',
+  'task:shell',
   'task:static',
   done
 ));
@@ -22,7 +23,12 @@ gulp.task('task:rollup', done => {
       entry: 'tmp/ngc/main-static.js',
       plugins: [
         nodeResolve({jsnext: true, main: true}),
-        commonJs({include: 'node_modules/**'})
+        commonJs({
+          include: 'node_modules/**',
+          namedExports: {
+            'node_modules/angular2-universal/browser.js': ['UniversalModule', 'prebootComplete', 'platformUniversalDynamic'],
+          }
+        })
       ],
     })
     .then(bundle => {
@@ -37,8 +43,12 @@ gulp.task('task:rollup', done => {
 gulp.task('task:static', () => gulp
   .src([
     'node_modules/zone.js/dist/zone.js',
-    'index.html',
+    'tmp/app-shell/index.html',
     'tmp/rollup/app.js',
   ])
   .pipe(gulp.dest('dist'))
 );
+
+gulp.task('task:shell', () => {
+  childProcess.execSync('node ./main-universal-entry.js');
+});

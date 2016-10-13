@@ -1,18 +1,19 @@
+import {AppShellModule} from '@angular/app-shell';
 import {NgModule} from '@angular/core';
-import {BrowserModule} from '@angular/platform-browser';
+import {CommonModule} from '@angular/common';
 import {RouterModule} from '@angular/router';
 
 import {RootComponent} from './root';
 import {HomeRoute} from './home/route';
 
 @NgModule({
-  bootstrap: [RootComponent],
   declarations: [
     HomeRoute,
     RootComponent,
   ],
   imports: [
-    BrowserModule,
+    AppShellModule,
+    CommonModule,
     RouterModule.forRoot([
       {path: '', component: HomeRoute},
     ], {useHash: true}),
