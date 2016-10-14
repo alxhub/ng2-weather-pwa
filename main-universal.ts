@@ -8,6 +8,7 @@ import {CompilerOptions, COMPILER_OPTIONS} from '@angular/core';
 import {ResourceLoader} from '@angular/compiler';
 import {platformUniversalDynamic, REQUEST_URL} from 'angular2-universal/node';
 import {AppUniversalModule} from './src/app-universal';
+// from './ngfactory/src/app-universal.ngfactory';
 
 export class FileResourceLoader implements ResourceLoader {
   get(path: string): Promise<string> {

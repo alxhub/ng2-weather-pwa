@@ -1,4 +1,13 @@
-<h1>This is a test</h1>
-<h2 *shellRender>Preboot</h2>
-<h2 *shellNoRender>Runtime</h2>
-<router-outlet></router-outlet>
+<h2 *shellRender>App Shell</h2>
+<header class="header">
+  <h1 class="header__title">Weather PWA</h1>
+  <button (click)="refresh()" id="butRefresh" class="headerButton" aria-label="Refresh"></button>
+  <button (click)="showPicker()" id="butAdd" class="headerButton" aria-label="Add"></button>
+</header>
+
+<main class="main">
+  <weather-card *ngFor="let city of cities" [city]="city"></weather-card>
+</main>
+<div class="dialog-container" [ngClass]="viewState">
+  <city-picker [cities]="weatherData.allCities" (save)="addCity($event)" (cancel)="onCancel($event)"></city-picker>
+</div>

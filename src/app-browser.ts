@@ -4,6 +4,8 @@ import {BrowserModule} from '@angular/platform-browser';
 
 import {AppModule} from './app';
 import {RootComponent} from './root';
+import {WeatherAPI} from './weather/api';
+import {Storage, LocalStorage} from './storage';
 
 @NgModule({
   bootstrap: [RootComponent],
@@ -12,5 +14,9 @@ import {RootComponent} from './root';
     AppShellModule.runtime(),
     AppModule,
   ],
+  providers: [
+    WeatherAPI,
+    {provide: Storage, useClass: LocalStorage},
+  ]
 })
 export class AppBrowserModule {}

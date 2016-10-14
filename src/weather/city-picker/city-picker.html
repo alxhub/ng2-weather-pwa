@@ -1,0 +1,12 @@
+<div class="dialog">
+  <div class="dialog-title">Add new city</div>
+  <div class="dialog-body">
+    <select id="selectCityToAdd" #picker>
+          <option *ngFor="let city of cities" [value]="city.key">{{city.name}}</option>
+    </select>
+  </div>
+  <div class="dialog-buttons">
+    <button id="butAddCity" class="button" (click)="save.emit(picker.value)">Add</button>
+    <button id="butAddCancel" class="button" (click)="cancel.emit($event)">Cancel</button>
+  </div>
+</div>

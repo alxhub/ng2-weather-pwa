@@ -1,0 +1,44 @@
+<div *ngIf="!temperature" class="card cardTemplate weather-forecast">
+  <div class="city-key" hidden></div>
+  <div class="location">{{name}}</div>
+  <div class="description">Loading...</div>
+</div>
+
+<div *ngIf="temperature" class="card cardTemplate weather-forecast">
+  <div class="city-key" hidden></div>
+  <div class="location">{{name}}</div>
+  <div class="date">{{time}}</div>
+  <div class="description">{{summary}}</div>
+  <div class="current">
+    <div class="visual">
+      <div class="icon" [ngClass]="icon"></div>
+      <div class="temperature">
+        <span class="value">{{temperature}}</span><span class="scale">°F</span>
+      </div>
+    </div>
+    <div class="description">
+      <div class="feels-like">
+        <span class="value">{{apparentTemp}}</span><span class="scale">°F</span>
+      </div>
+      <div class="precip">{{probability}}%</div>
+      <div class="humidity">{{humidity}}%</div>
+      <div class="wind">
+        <span class="value">{{windSpeed}}</span>
+        <span class="scale">mph</span>
+        <span class="direction">{{windBearing}}</span>°
+      </div>
+    </div>
+  </div>
+  <div class="future">
+    <div class="oneday" *ngFor="let day of forecast">
+      <div class="date">{{day.day}}</div>
+      <div class="icon" [ngClass]="day.icon"></div>
+      <div class="temp-high">
+        <span class="value">{{day.max}}</span>°
+      </div>
+      <div class="temp-low">
+        <span class="value">{{day.min}}</span>°
+      </div>
+    </div>
+  </div>
+</div>

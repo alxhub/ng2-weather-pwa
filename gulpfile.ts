@@ -9,7 +9,10 @@ gulp.task('build', done => runSequence(
   'task:ngc',
   'task:rollup',
   'task:shell',
-  'task:static',
+  [
+    'task:static',
+    'task:images',
+  ],
   done
 ));
 
@@ -47,6 +50,13 @@ gulp.task('task:static', () => gulp
     'tmp/rollup/app.js',
   ])
   .pipe(gulp.dest('dist'))
+);
+
+gulp.task('task:images', () => gulp
+  .src([
+    'images/**/*.*',
+  ])
+  .pipe(gulp.dest('dist/images'))
 );
 
 gulp.task('task:shell', () => {
