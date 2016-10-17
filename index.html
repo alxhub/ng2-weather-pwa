@@ -118,6 +118,15 @@
     </script>
     <script src="/zone.js" defer></script>
     <script src="/app.js" defer></script>
+    <script defer>
+      if (navigator.serviceWorker) {
+        navigator.serviceWorker.register('/worker-basic.min.js').then(() => {
+          console.log('Angular service worker installed')
+        }, err => {
+          console.error('Angular service worker error:', err);
+        });
+      }
+    </script>
   </head>
   <body>
     <ngw-root>
