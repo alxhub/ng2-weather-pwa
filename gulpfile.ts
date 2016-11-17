@@ -92,6 +92,7 @@ gulp.task('task:worker-script', () => gulp
 
 gulp.task('task:static', () => gulp
   .src([
+    'manifest.webmanifest',
     'node_modules/zone.js/dist/zone.js',
     'tmp/app-shell/index.html',
     'tmp/rollup/app.js',
@@ -110,7 +111,8 @@ gulp.task('task:shell', () => {
   childProcess.execSync('node ./main-universal-entry.js');
 });
 
-gulp.task('task:service-worker', () => gulpGenerateManifest()
+gulp.task('task:service-worker', () => gulp
+  .src('ngsw-manifest.json')
   .pipe(gulpAddStaticFiles(gulp.src([
     'dist/**/*.*'
   ]), {manifestKey: 'static'}))

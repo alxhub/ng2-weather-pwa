@@ -1,0 +1,10 @@
+{
+  "routing": {
+    "routes": {
+      "/": {
+        "prefix": false
+      }
+    },
+    "index": "/index.html"
+  }
+}

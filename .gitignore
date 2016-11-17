@@ -2,3 +2,6 @@
 /ngfactory
 /node_modules
 /tmp
+/.firebaserc
+/firebase.json
+/database.rules.json
