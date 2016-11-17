@@ -4,8 +4,11 @@
   <button (click)="showPicker()" id="butAdd" class="headerButton" aria-label="Add"></button>
 </header>
 
-<main class="main">
+<main class="main" *shellNoRender>
   <weather-card *ngFor="let city of cities" [city]="city"></weather-card>
+</main>
+<main class="main" *shellRender>
+  <h2>Loading...</h2>
 </main>
 <div class="dialog-container" [ngClass]="viewState">
   <city-picker [cities]="weatherData.allCities" (save)="addCity($event)" (cancel)="onCancel($event)"></city-picker>
