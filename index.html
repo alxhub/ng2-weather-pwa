@@ -120,7 +120,7 @@
     <script src="/app.js" defer></script>
     <script defer>
       if (navigator.serviceWorker) {
-        navigator.serviceWorker.register('/worker-basic.min.js').then(() => {
+        navigator.serviceWorker.register('/worker-basic.js').then(() => {
           console.log('Angular service worker installed')
         }, err => {
           console.error('Angular service worker error:', err);

@@ -85,7 +85,7 @@ gulp.task('task:uglifyjs', () => {
 
 gulp.task('task:worker-script', () => gulp
   .src([
-    'node_modules/@angular/service-worker/bundles/worker-basic.min.js',
+    'node_modules/@angular/service-worker/bundles/worker-basic.js',
   ])
   .pipe(gulp.dest('dist'))
 );

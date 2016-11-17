@@ -24,9 +24,9 @@
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/@angular/core/-/core-2.1.0.tgz#a2fdb0f76f72e5ac521feadd4d119f60afff2bd3"
 
-"@angular/core@~2.1.0":
-  version "2.1.2"
-  resolved "https://registry.yarnpkg.com/@angular/core/-/core-2.1.2.tgz#ce39521643f3d97bc5923d5a7aa76604e973dac8"
+"@angular/core@~2.2.0":
+  version "2.2.1"
+  resolved "https://registry.yarnpkg.com/@angular/core/-/core-2.2.1.tgz#86fdc34a370a4fcfe84ed9de4b3c43548612919c"
 
 "@angular/forms":
   version "2.1.0"
@@ -51,10 +51,10 @@
   resolved "https://registry.yarnpkg.com/@angular/platform-browser-dynamic/-/platform-browser-dynamic-2.1.0.tgz#05de532f46bbfdf80a603768e994f33c2ddf73e7"
 
 "@angular/service-worker":
-  version "0.7.0"
-  resolved "https://registry.yarnpkg.com/@angular/service-worker/-/service-worker-0.7.0.tgz#b4a855a901eaa7b484cafdb3966d290fac18a09a"
+  version "0.7.1"
+  resolved "https://registry.yarnpkg.com/@angular/service-worker/-/service-worker-0.7.1.tgz#6e71d9895159079205c7c5765bdf28262c415d30"
   dependencies:
-    "@angular/core" "~2.1.0"
+    "@angular/core" "~2.2.0"
     base64-js "^1.1.2"
     jshashes "^1.0.5"
     protractor "^4.0.10"
